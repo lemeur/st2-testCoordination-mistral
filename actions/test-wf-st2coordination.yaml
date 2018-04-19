@@ -1,0 +1,12 @@
+---
+description: Test mistral workflow with st2 actions which are cancelled by coordination
+enabled: true
+entry_point: workflows/test-wf-st2coordination.yaml
+name: test-wf-st2coordination
+pack: st2cspack
+parameters:
+  workflow:
+    default: st2cspack.test-wf-st2coordination.main
+    immutable: true
+    type: string
+runner_type: mistral-v2

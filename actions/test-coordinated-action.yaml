@@ -1,0 +1,19 @@
+---
+description: Action that executes an arbitrary Linux command on the localhost.
+enabled: true
+entry_point: 'workflows/test-coordinated-action.yaml'
+name: test-coordinated-action
+parameters:
+  cmd:
+    description: Arbitrary Linux command to be executed on the local host.
+    required: true
+    type: string
+  attr:
+    description: simple attribute to check for coordination
+    required: true
+    type: string
+  workflow:
+    default: st2cspack.test-coordinated-action.simplecho
+    immutable: true
+    type: string
+runner_type: mistral-v2

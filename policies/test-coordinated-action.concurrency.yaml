@@ -1,0 +1,10 @@
+name: test-coordinated-action.concurrency
+description: Limits the concurrent executions for test-coordinated-action to 1 per user 'attr'
+enabled: true
+resource_ref: st2cspack.test-coordinated-action
+policy_type: action.concurrency.attr
+parameters:
+    action: cancel
+    threshold: 1
+    attributes:
+        - attr

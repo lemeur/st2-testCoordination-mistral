@@ -1,0 +1,15 @@
+version: "2.0"
+name: st2cspack.test-wf-st2coordination
+description: Test mistral workflow with sté actions which are cancelled by coordination
+
+workflows:
+    main:
+        type: direct
+        tasks:
+            repeat:
+                with-items: i in <% list(range(0, 3)) %>
+                action: st2cspack.test-coordinated-action
+                input:
+                    cmd: 'date; sleep 10; date'
+                    attr: 'locked-action-<% $.i mod 2 %>'
+

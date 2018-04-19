@@ -1,0 +1,15 @@
+version: "2.0"
+name: st2cspack.test-coordinated-action
+description: Test mistral workflow with sté actions which are cancelled by coordination
+
+workflows:
+    main:
+        type: direct
+        input:
+            - cmd
+            - attr
+        tasks:
+            anothertask:
+                action: core.local
+                input:
+                    cmd: <% $.cmd %>
